@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - All Users</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .empty {
+            text-align: center;
+            color: #777;
+        }
+
+        .user {
+            padding: 15px;
+            background: #f7f7fb;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>👥 All Users</h1>
+
+        {% if users %}
+
+            {% for user in users %}
+
+                <div class="user">
+                    <strong>Character:</strong>
+                    {{ user.character_name }}
+
+                    <br><br>
+
+                    <strong>Story:</strong>
+                    {{ user.story_prompt }}
+
+                    <br><br>
+
+                    <strong>Setting:</strong>
+                    {{ user.setting }}
+
+                    <br><br>
+
+                    <strong>Tone:</strong>
+                    {{ user.tone }}
+
+                    <br><br>
+
+                    <strong>Art Style:</strong>
+                    {{ user.art_style }}
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="empty">
+                No users have generated a comic yet.
+            </p>
+
+        {% endif %}
+
+        <a class="button" href="/">
+            ← Back to ComicCraft
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

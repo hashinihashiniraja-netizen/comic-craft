@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - AI Comic Story Creator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #6c5ce7;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5848d6;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #888;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎨 ComicCraft</h1>
+
+    <p class="subtitle">
+        AI Comic Story Creator using Gemini Models
+    </p>
+
+    <form action="/generate" method="post">
+
+        <label for="story_prompt">Story Idea</label>
+        <textarea
+            id="story_prompt"
+            name="story_prompt"
+            placeholder="Enter your comic story idea..."
+            required
+        ></textarea>
+
+        <label for="character_name">Main Character</label>
+        <input
+            type="text"
+            id="character_name"
+            name="character_name"
+            placeholder="Example: Super Ravi"
+            required
+        >
+
+        <label for="setting">Setting</label>
+        <input
+            type="text"
+            id="setting"
+            name="setting"
+            placeholder="Example: Future Chennai"
+            required
+        >
+
+        <label for="tone">Story Tone</label>
+        <select id="tone" name="tone" required>
+            <option value="Funny">Funny</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Action">Action</option>
+            <option value="Emotional">Emotional</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+        </select>
+
+        <label for="art_style">Art Style</label>
+        <select id="art_style" name="art_style" required>
+            <option value="Comic Book">Comic Book</option>
+            <option value="Anime">Anime</option>
+            <option value="Cartoon">Cartoon</option>
+            <option value="Manga">Manga</option>
+            <option value="Watercolor">Watercolor</option>
+            <option value="Digital Art">Digital Art</option>
+        </select>
+
+        <button type="submit">
+            ✨ Generate My Comic
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Built with FastAPI + Gemini + Hugging Face
+    </div>
+
+</div>
+
+</body>
+</html>
